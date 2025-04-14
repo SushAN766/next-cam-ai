@@ -1,16 +1,13 @@
-@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
 }
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+
 @media (prefers-color-scheme: dark) {
   :root {
     --foreground-rgb: 255, 255, 255;
@@ -31,11 +28,5 @@ body {
     text-wrap: balance;
   }
 
-  .gradient {
-    @apply bg-gradient-to-b from-white via-gray-300 to-gray-600;
-  }
-
-  .gradient-title {
-    @apply gradient text-transparent bg-clip-text;
-  }
+  
 }
