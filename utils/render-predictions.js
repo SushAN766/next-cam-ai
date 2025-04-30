@@ -1,4 +1,3 @@
-// This function renders the predictions on the canvas.
 import {throttle} from "lodash";
 
 export const renderPredictions = (predictions, ctx) => {
@@ -8,8 +7,6 @@ export const renderPredictions = (predictions, ctx) => {
   const font = "16px sans-serif";
   ctx.font = font;
   ctx.textBaseline = "top";
-
-//Draw the bounding box and label for each prediction
 
   predictions.forEach((prediction) => {
     const [x, y, width, height] = prediction["bbox"];
