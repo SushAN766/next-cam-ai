@@ -1,15 +1,20 @@
 "use client"
+
 import React, {useEffect,useRef,useState} from 'react'
 import Webcam from "react-webcam";
 import * as tf from "@tensorflow/tfjs";
 import {load as cocoSSDLoad} from "@tensorflow-models/coco-ssd";
 import {renderPredictions} from "@/utils/render-predictions";
+
 let detectInterval;
+
 const ObjectDetection = () => {
   const [isLoading, setIsLoading] =useState(true);
+  
   const webcamRef =useRef(null);
   const canvasRef =useRef(null);
-  const runCoco=async () => {
+
+  async function runCoco(){
     setIsLoading(true);
     const net = await cocoSSDLoad();
     setIsLoading(false);
@@ -19,7 +24,7 @@ const ObjectDetection = () => {
     }, 10); 
   };
 
-    async function runObjectDetection(net) {
+  async function runObjectDetection(net) {
     if (
       canvasRef.current &&
       webcamRef.current !== null &&
@@ -35,14 +40,13 @@ const ObjectDetection = () => {
         0.6
       );
 
-        // console.log(detectedObjects);
+      // console.log(detectedObjects);
 
       const context = canvasRef.current.getContext("2d");
       renderPredictions(detectedObjects, context);
     }
   }
-
-
+  
   const showmyVideo = () => {
     if (
       webcamRef.current !== null &&
