@@ -62,7 +62,7 @@ The webcam feed is captured using the `navigator.mediaDevices.getUserMedia()` AP
 const stream = await navigator.mediaDevices.getUserMedia({ video: true });
 video.srcObject = stream;
 ```
-##Setup the AI Model
+### Setup the AI Model
 To set up the AI model (COCO-SSD), TensorFlow.js is used to load the model and perform real-time object detection.
 
 ```javascript
@@ -70,7 +70,7 @@ import * as cocoSsd from '@tensorflow-models/coco-ssd';
 
 const model = await cocoSsd.load();
 ```
-##Rendering Predictions on Canvas
+### Rendering Predictions on Canvas
 Once the model is loaded, predictions are made on each frame, and the results are drawn on a canvas element. This allows users to see the objects detected in real-time.
 
 ```javascript
@@ -86,7 +86,7 @@ predictions.forEach(prediction => {
   context.fillText(prediction.class, prediction.bbox[0], prediction.bbox[1] - 10);
 });
 ```
-## Playing Alarm on Person Detection
+### Playing Alarm on Person Detection
 If the model detects a "person" object, an alarm sound is played using the Audio API.
 
 ```javascript
