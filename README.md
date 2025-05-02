@@ -25,13 +25,13 @@ This project is an AI-powered object detection application built with **Next.js 
 git clone https://github.com/yourusername/ai-object-detection-app.git
 cd ai-object-detection-app
 ```
-2. Install dependencies
+### 2. Install dependencies
 Run the following command to install the necessary dependencies:
 ```bash
 npm install
 
 ```
-3. Run the development server
+### 3. Run the development server
 Start the development server:
 ```bash
 npm run dev
@@ -46,7 +46,7 @@ The application is styled using **Tailwind CSS**. Below is the simple structure 
 - **Object Detection Result**: Predictions are drawn on a canvas overlaying the webcam feed.
 - **Alarm**: Triggers a sound when a "person" is detected.
 
-### Tailwind CSS Configuration
+## Tailwind CSS Configuration
 
 Tailwind CSS is already set up in the project. If you need to configure it further, you can modify the `tailwind.config.js` file.
 
