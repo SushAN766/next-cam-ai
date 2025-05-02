@@ -100,9 +100,9 @@ if (prediction.class === 'person') {
 You can deploy the app to Vercel or any other platform that supports Next.js.
 
 To deploy on Vercel, run the following command:
-```bsh
+```bash
 vercel
-
+```
 
 
 
